@@ -1,0 +1,7 @@
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.csprojAssemblyReference.cache
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.AssemblyInfoInputs.cache
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.AssemblyInfo.cs
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.csproj.CoreCompileInputs.cache
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vinod\source\repos\Dapper.Apis\Student.Api\obj\Debug\net5.0\DapperRepo.Api.MvcApplicationPartsAssemblyInfo.cache
