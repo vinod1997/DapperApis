@@ -12,11 +12,13 @@ namespace Student.Api.Repository
 {
    public interface IStudentRepository
     {
-        ValueTask<Student1> GetById(int id);
+        ValueTask<Student1> GetById(Product entity, int id);
         
         Task<IEnumerable<Student1>> GetAllStudents();
         
-        Task  AddStudent(Student1 entity);
+        Task AddStudent(Student1 entity);
+        //Task UpdateStudent(Student1 entity, int id);
+        //Task RemoveStudent(int id);
 
     }
     public class StudentRepository : BaseRepository , IStudentRepository
@@ -28,9 +30,14 @@ namespace Student.Api.Repository
             _commandText = commandText;
 
         }
-        public Task AddStudent(Student1 entity)
+
+        public async Task AddStudent(Student1 entity)
         {
-            throw new NotImplementedException();
+            await WithConnection(async conn =>
+            {
+                await conn.ExecuteAsync(_commandText.AddStudent,
+                    new { Name = entity.Name, Department = entity.Department });
+            });
         }
 
         public async Task<IEnumerable<Student1>> GetAllStudents()
@@ -42,11 +49,28 @@ namespace Student.Api.Repository
             });
         }
 
-        public ValueTask<Student1> GetById(int id)
+
+
+        public async ValueTask<Student1> GetById(Product entity, int id)
         {
-            throw new NotImplementedException();
+            return await WithConnection(async conn =>
+            {
+                var query = await conn.QueryFirstOrDefaultAsync<Student1>(_commandText.GetStudentById, new { Id = id });
+                return query;
+            });
         }
 
-       
-    }
-}
+        //public Task RemoveStudent(int id)
+        //{
+        //    await WithConnection(async conn =>
+        //    {
+        //        await conn.ExecuteAsync(_commandText.RemoveStudent, new { Id = id });
+        //    });
+        //}
+
+        //public Task UpdateStudent(Student1 entity, int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+      }
+   }

@@ -26,5 +26,19 @@ namespace Student.Api.Controllers
             var students = await _studentRepository.GetAllStudents();
             return Ok(students);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> AddStudent(Student1 entity)
+        {
+            await _studentRepository.AddStudent(entity);
+            return Ok(entity);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Product>> Update(Product entity, int id)
+        {
+            await _studentRepository.GetById(entity, id);
+            return Ok(entity);
+        }
     }
 }

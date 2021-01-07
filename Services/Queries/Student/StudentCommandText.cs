@@ -18,6 +18,8 @@ namespace Student.Api.Services.Queries.Student
         public string GetStudentById => "select * from Student where Id = @Id";
 
         public string AddStudent => "Insert Into  Student (Name, Department) Values (@Name, @Department)";
+        public string UpdateStudent => "Update Student set Name = @Name, Department = @Department Where Id =@Id";
+        public string RemoveStudent => "Delete From Student Where Id= @Id";
 
     }
 }

@@ -18,6 +18,7 @@ namespace Student.Api.Services
             _connectionString = _configuration.GetConnectionString("DefaultConnection");
         }
 
+    
         // use for buffered queries that return a type
         protected async Task<T> WithConnection<T>(Func<IDbConnection, Task<T>> getData)
         {
